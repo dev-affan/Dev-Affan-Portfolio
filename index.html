@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Affan</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/user.png" type="image/x-icon">
+</head>
+
+<body>
+  <header>
+    <h1>Muhammad Affan.</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Project">Project</a>
+      <a href="tel:+923333478433" class="contact">Contact Me</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+  </header>
+  <section id="home">
+    <div class="home-container">
+      <div class="home-img">
+        <img src="./assets/Main-Image.png" alt="Muhammad Affan">
+      </div>
+
+      <div class="home-text">
+        <h1>Hi.. I'm Muhammad Affan.</h1>
+        <p>
+          "I’m a MERN stack learner building my foundation in HTML and CSS and
+          turning small ideas into clean, simple interfaces. With every project,
+          I’m leveling up toward becoming a full-stack developer. This portfolio
+          marks the beginning of my journey — with much more ahead."
+        </p>
+
+        <!-- 🔥 Buttons Added -->
+        <div class="home-buttons">
+          <a href="https://github.com/dev-affan" target="_blank" class="btn github">GitHub</a>
+          <a href="https://www.linkedin.com/in/dev-affan/" target="_blank" class="btn linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="About">
+    <div class="about-container">
+      <h2>About Me</h2>
+
+      <p class="about-text">
+        “I’m Muhammad Affan — a developer in the making. Right now, I’m exploring
+        the foundations of web development with HTML, CSS, and the MERN stack.
+        I enjoy turning ideas into functional designs and learning new concepts
+        every day. This journey is just getting started, and I’m excited to keep
+        leveling up until I become a full-stack developer capable of building
+        complete modern web apps.”
+      </p>
+    </div>
+  </section>
+
+  <section id="Project">
+    <div class="project-container">
+      <h2>My Projects</h2>
+
+      <div class="project-cards">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <h3>Builder Construction Website</h3>
+          <p>A modern, clean construction company website with smooth UI.</p>
+          <a href="https://dev-affan.github.io/Builder-Construction-Multi/" target="_blank" class="project-btn">View
+            Project</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <h3>Netflix Clone</h3>
+          <p>A front-end Netflix UI clone built with only HTML & CSS.</p>
+          <a href="https://dev-affan.github.io/Netflix-Clone/" target="_blank" class="project-btn">View Project</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <h3>Apple Website Clone</h3>
+          <p>A minimal Apple-style UI homepage clone made with HTML & CSS.</p>
+          <a href="https://dev-affan.github.io/assignmentapple/" target="_blank" class="project-btn">View Project</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <h3>Contact Me</h3>
+
+      <p>Email: <a href="mailto:affanasif2006@example.com">affanasif2006@example.com</a></p>
+      <p>Phone: <a href="tel:+923333478433">+92 333 3478433</a></p>
+
+      <p class="footer-copy">© 2025 Muhammad Affan. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    function toggleMenu() {
+      document.querySelector("header nav").classList.toggle("show");
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    color: wheat;
+}
+
+header {
+    height: 70px;
+    width: 100vw;
+    background: linear-gradient(90deg, rgba(74, 7, 7, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0 40px;
+}
+
+.hamburger {
+    display: none;
+    /* Desktop me hide */
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+header h1 {
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 0px 15px #CE5937;
+}
+
+header h1:hover {
+    text-shadow: 2px 2px 15px #FF0808;
+    color: #000000;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+header nav {
+    display: flex;
+    gap: 70px;
+}
+
+header nav a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #FF0808;
+    border-bottom: 5px solid;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.contact {
+    border: 1px solid #FF0808;
+    color: #FF0808;
+    background-color: black;
+}
+
+.contact:hover {
+    background: #ff3535;
+    color: black;
+    box-shadow: 0 0 12px red;
+    transition: 0.7s;
+}
+
+header nav a:hover {
+    background-color: #FF0808;
+    color: black;
+    transition: 0.8s;
+    border-radius: 2px;
+    border-bottom: 5px solid #FF0808;
+    box-shadow: 0px -2px 144px 15px #FF0808;
+}
+
+
+#home {
+
+    /* width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+
+    width: 100%;
+    min-height: 100vh;
+    padding: 180px 0;
+    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    /* header ke neeche jagah */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+
+}
+
+.home-container {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    /* space between image and text */
+}
+
+.home-img img {
+    width: 260px;
+    height: 260px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 2px solid red;
+    box-shadow: 0 0 20px rgb(2, 2, 2);
+}
+
+.home-text {
+    width: 50%;
+    color: white;
+}
+
+.home-text h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #ff3535;
+    text-shadow: 0 0 8px red;
+}
+
+.home-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+    /* JISRAY TUM CHAH RAHE THAY */
+    color: #dcdcdc;
+}
+
+.home-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+/* Main button style */
+.btn {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+    background: black;
+    border: 1.5px solid red;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+/* LinkedIn Button */
+.btn.linkedin:hover {
+    background: #ff3535;
+    color: black;
+    box-shadow: 0 0 12px red;
+    transform: translateY(-3px);
+}
+
+/* GitHub Button */
+.btn.github:hover {
+    background: #ff3535;
+    color: black;
+    box-shadow: 0 0 12px red;
+    transform: translateY(-3px);
+}
+
+#About {
+    width: 100%;
+    min-height: 90vh;
+    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+    border-bottom: 2px solid black;
+}
+
+.about-container {
+    width: 70%;
+    text-align: center;
+    color: white;
+}
+
+.about-container h2 {
+    font-size: 40px;
+    color: #ff3535;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-shadow: 0 0 10px red;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f0f0f0;
+    padding: 20px 30px;
+    font-weight: 500;
+    border-left: 3px solid red;
+    border-right: 3px solid red;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    display: inline-block;
+    text-shadow: 0 0 6px black;
+}
+
+#Project {
+    width: 100%;
+    padding: 60px 0;
+    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+
+}
+
+.project-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+
+.project-container h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #ff3535;
+    text-shadow: 0 0 10px red;
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.project-card {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid red;
+    box-shadow: 0 0 10px #ff000055;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #ff0000aa;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ff4d4d;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #ff7272;
+}
+
+footer {
+    width: 100%;
+    padding: 40px 0;
+    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    color: white;
+    text-align: center;
+    border-top: 2px solid #000000;
+}
+
+.footer-container h3 {
+    font-size: 28px;
+    color: #ff3535;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px red;
+}
+
+.footer-container p {
+    font-size: 17px;
+    margin: 5px 0;
+}
+
+.footer-container a {
+    color: #ff7272;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.footer-container a:hover {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 6px red;
+    transition: 0.5s;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+@media(max-width: 768px) {
+
+    /* ✦ Header changes only on mobile */
+    header {
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    /* Hide nav menu initially */
+    header nav {
+        display: none;
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 20px 25px;
+        border: 2px solid red;
+        border-radius: 10px;
+        width: 200px;
+        z-index: 999;
+    }
+
+    /* When hamburger click → show menu */
+    header nav.show {
+        display: flex;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 20px;
+        font-size: 32px;
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Hide desktop nav layout */
+    header nav a {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .home-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .home-img img {
+        width: 70%;
+    }
+
+    .home-text {
+        width: 100%;
+    }
+
+
+    .about-container {
+        width: 90%;
+    }
+
+    .about-text {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+
+    .project-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+    }
+}
