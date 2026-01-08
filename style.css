@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Nunito;
     color: wheat;
+    scroll-behavior: smooth;
 }
 
 header {
     height: 70px;
     width: 100vw;
-    background: linear-gradient(90deg, rgba(74, 7, 7, 1) 0%, rgba(0, 0, 0, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    background: linear-gradient(90deg, rgba(120, 20, 20, 1) 0%, rgba(40, 10, 10, 1) 50%, rgba(25, 25, 25, 1) 100%);
     color: white;
     display: flex;
     justify-content: space-around;
@@ -19,6 +22,7 @@ header {
     right: 0;
     left: 0;
     padding: 0 40px;
+    z-index: 9999;
 }
 
 .hamburger {
@@ -31,67 +35,116 @@ header {
 
 header h1 {
     color: red;
-    font-family: 'Courier New', Courier, monospace;
-    text-shadow: 2px 0px 15px #CE5937;
-}
-
-header h1:hover {
-    text-shadow: 2px 2px 15px #FF0808;
-    color: #000000;
-    cursor: pointer;
-    transition: 0.8s;
+    /* font-family: 'Courier New', Courier, monospace; */
 }
 
 header nav {
+    height: 45px;
+    /* width: 40%; */
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 70px;
+    overflow: hidden;
+    z-index: 999;
 }
 
-header nav a {
-    font-size: 24px;
+header nav .items {
+    position: relative;
+    /* IMPORTANT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
+    font-size: 20px;
     color: #FF0808;
-    border-bottom: 5px solid;
-    padding: 8px 15px;
+    height: 100%;
+    padding: 13px 25px;
+    /* width: 100%; */
+    /* border: 1px solid #FF0808; */
     border-radius: 5px;
+    overflow: hidden;
+    z-index: 21;
+    transition: color 0.7s ease;
 }
 
-.contact {
-    border: 1px solid #FF0808;
-    color: #FF0808;
-    background-color: black;
-}
 
-.contact:hover {
-    background: #ff3535;
-    color: black;
-    box-shadow: 0 0 12px red;
-    transition: 0.7s;
-}
-
-header nav a:hover {
+header nav .items::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    /* start from left */
     background-color: #FF0808;
-    color: black;
-    transition: 0.8s;
-    border-radius: 2px;
-    border-bottom: 5px solid #FF0808;
-    box-shadow: 0px -2px 144px 15px #FF0808;
+    z-index: -1;
+    /* background peeche */
+    transition: width 0.7s ease;
 }
 
+header nav .items:hover::after {
+    width: 100%;
+    /* left → right */
+}
+
+header nav .items:hover {
+    color: rgb(0, 0, 0);
+}
+
+#button {
+    border: 1.5px solid red;
+    padding: 13px 25px;
+    height: 45px;
+    min-width: 140px;
+    /* ✅ fixed width */
+    box-sizing: border-box;
+    /* ✅ IMPORTANT */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    /* background: black; */
+    background-image: rgba(40, 10, 10, 1);
+    color: red;
+    z-index: 1;
+    transition: box-shadow 0.3s ease, color 0.3s ease;
+}
+
+#button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(201, 25, 25);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+#button:hover::before {
+    transform: scaleX(1);
+}
+
+
+#button:hover {
+    color: black;
+    box-shadow: 0 0 20px red;
+}
+
+#button:active {
+    transform: scale(0.95);
+}
 
 #home {
-
-    /* width: 100%;
-    height: 100vh;
-    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-
     width: 100%;
     min-height: 100vh;
     padding: 180px 0;
-    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    background: linear-gradient(90deg, rgba(120, 20, 20, 1) 0%, rgba(40, 10, 10, 1) 50%, rgba(25, 25, 25, 1) 100%);
     /* header ke neeche jagah */
     display: flex;
     flex-direction: column;
@@ -148,7 +201,10 @@ header nav a:hover {
 }
 
 /* Main button style */
+
 .btn {
+    position: relative;
+    overflow: hidden;
     padding: 10px 22px;
     border-radius: 6px;
     font-size: 15px;
@@ -156,30 +212,39 @@ header nav a:hover {
     text-decoration: none;
     background: black;
     border: 1.5px solid red;
-    transition: 0.3s ease-in-out;
+    transition: color 1.2s ease;
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    z-index: 1;
 }
 
-/* LinkedIn Button */
-.btn.linkedin:hover {
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 100%;
     background: #ff3535;
-    color: black;
-    box-shadow: 0 0 12px red;
-    transform: translateY(-3px);
+    transform: translateX(-50%);
+    transition: width 0.8s ease;
+    z-index: -1;
 }
 
-/* GitHub Button */
-.btn.github:hover {
-    background: #ff3535;
+.btn:hover::before {
+    width: 120%;
+}
+
+.btn:hover {
     color: black;
-    box-shadow: 0 0 12px red;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
+    box-shadow: 0 0 14px red;
 }
 
 #About {
     width: 100%;
     min-height: 90vh;
-    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    scroll-margin-top: 70px;
+    background: linear-gradient(90deg, rgba(120, 20, 20, 1) 0%, rgba(40, 10, 10, 1) 50%, rgba(25, 25, 25, 1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,7 +253,7 @@ header nav a:hover {
 }
 
 .about-container {
-    width: 70%;
+    width: 50%;
     text-align: center;
     color: white;
 }
@@ -206,6 +271,7 @@ header nav a:hover {
     line-height: 1.8;
     color: #f0f0f0;
     padding: 20px 30px;
+    text-align: justify;
     font-weight: 500;
     border-left: 3px solid red;
     border-right: 3px solid red;
@@ -216,9 +282,11 @@ header nav a:hover {
 }
 
 #Project {
+    height: 100vh;
+    scroll-margin-top: 70px;
     width: 100%;
     padding: 60px 0;
-    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    background: linear-gradient(90deg, rgba(120, 20, 20, 1) 0%, rgba(40, 10, 10, 1) 50%, rgba(25, 25, 25, 1) 100%);
 
 }
 
@@ -245,7 +313,7 @@ header nav a:hover {
 
 .project-card {
     width: 300px;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(139, 42, 42, 0);
     padding: 25px;
     border-radius: 15px;
     border: 2px solid red;
@@ -256,6 +324,7 @@ header nav a:hover {
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 20px #ff0000aa;
+    z-index: 1;
 }
 
 .project-card h3 {
@@ -271,24 +340,48 @@ header nav a:hover {
 }
 
 .project-btn {
+    position: relative;
     display: inline-block;
     padding: 10px 20px;
-    background: red;
+    background: black;
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    transition: 0.3s;
+    overflow: hidden;
+    border: 1.5px solid red;
+    transition: color 0.9s ease, transform 0.6s ease;
+    z-index: 1;
+}
+
+.project-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0%;
+    height: 100%;
+    background: #ff3535;
+    transform: translateX(-50%);
+    transition: width 0.65s ease-in-out;
+    z-index: -1;
+}
+
+.project-btn:hover::before {
+    width: 130%;
 }
 
 .project-btn:hover {
-    background: #ff7272;
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 0 14px red;
 }
+
 
 footer {
     width: 100%;
     padding: 40px 0;
-    background: linear-gradient(90deg, rgba(99, 0, 0, 1) 0%, rgba(46, 4, 4, 1) 52%, rgba(20, 20, 20, 1) 100%);
+    background: linear-gradient(90deg, rgba(120, 20, 20, 1) 0%, rgba(40, 10, 10, 1) 50%, rgba(25, 25, 25, 1) 100%);
     color: white;
     text-align: center;
     border-top: 2px solid #000000;
@@ -325,83 +418,163 @@ footer {
 }
 
 
-@media(max-width: 768px) {
+/* ==========================================
+    RE-STRUCTURED RESPONSIVE FIX
+   ========================================== */
 
-    /* ✦ Header changes only on mobile */
+/* --- Step 1: Global Fix (Sab screen sizes ke liye) --- */
+#Project,
+#About,
+#home {
+    height: auto !important;
+    /* Fixed height overlap ki sabse bari wajah hai */
+    min-height: 100vh;
+    /* Screen jitni lambai rakhega, par lamba hone par barh jayega */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+    /* Section ke upar neeche barabar jagah */
+}
+
+/* --- Step 2: Mobile (up to 767px) --- */
+@media (max-width: 767px) {
     header {
-        justify-content: center;
+        justify-content: space-between;
         padding: 0 20px;
     }
 
-    /* Hide nav menu initially */
-    header nav {
-        display: none;
-        flex-direction: column;
-        gap: 20px;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background: rgba(0, 0, 0, 0.95);
-        padding: 20px 25px;
-        border: 2px solid red;
-        border-radius: 10px;
-        width: 200px;
-        z-index: 999;
-    }
-
-    /* When hamburger click → show menu */
-    header nav.show {
-        display: flex;
-    }
-
-    /* Hamburger icon */
     .hamburger {
         display: block;
-        position: absolute;
-        right: 20px;
-        font-size: 32px;
-        color: red;
-        cursor: pointer;
     }
 
-    /* Hide desktop nav layout */
-    header nav a {
-        font-size: 20px;
-        text-align: left;
+    header nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: rgba(30, 5, 5, 0.98);
+        width: 100%;
+        height: calc(90vh - 70px);
+        flex-direction: column;
+        gap: 20px;
+        transition: 0.4s;
+    }
+
+    header nav .items {
+        height: 50px;
+    }
+
+    header nav.show {
+        right: 0;
     }
 
     .home-container {
         flex-direction: column;
-        gap: 20px;
         text-align: center;
-        margin-top: 40px;
-    }
-
-    .home-img img {
-        width: 70%;
     }
 
     .home-text {
         width: 100%;
     }
 
-
     .about-container {
         width: 90%;
+        /* Pura screen touch na kare */
+        padding: 0 10px;
     }
 
     .about-text {
-        font-size: 16px;
-        padding: 15px;
+        font-size: 15px;
+        /* Mobile par font thoda chota professional lagta hai */
+        line-height: 1.6;
+        padding: 15px 20px;
+        /* Text ke andar ki space */
+        text-align: center;
+        /* Mobile par justified text aksar gaps chor deta hai, center behtar hai */
+        border-left: none;
+        /* Border design mobile par simplified rakhein */
+        border-right: none;
+        border-top: 2px solid red;
+        /* Sirf top aur bottom border */
+        border-bottom: 2px solid red;
+        background: rgba(0, 0, 0, 0.5);
+        /* Background thoda dark taake readable ho */
     }
 
+    .about-container h2 {
+        font-size: 30px;
+        /* Heading thodi choti */
+        margin-bottom: 15px;
+    }
 
     .project-cards {
         flex-direction: column;
         align-items: center;
+        /* overflow: hidden; */
+    }
+}
+
+/* --- Step 3: Tablet & Small Laptops (768px to 1199px) - YAHAN FIX HAI --- */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .home-container {
+        width: 95%;
+        gap: 30px;
+    }
+
+    .home-text h1 {
+        font-size: 28px;
+    }
+
+    .project-container {
+        width: 95%;
+    }
+
+    .project-cards {
+        display: flex;
+        flex-wrap: wrap;
+        /* Cards ko agli line mein bhejne ke liye */
+        justify-content: center;
+        gap: 20px;
     }
 
     .project-card {
-        width: 90%;
+        width: 45%;
+        /* Screen bari ho to 2 cards ek line mein ayenge */
+        min-width: 280px;
+    }
+}
+
+/* --- Step 4: Large Desktops (1200px and up) --- */
+@media (min-width: 1200px) {
+
+    .home-container,
+    .project-container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .project-cards {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        /* Baray monitor par 3 cards ek sath */
+    }
+}
+
+/* Footer Fix: Overlap se bachne ke liye */
+footer {
+    height: auto;
+    padding: 60px 20px;
+    margin-top: auto;
+}
+
+/* Extra Tweaks for Small Heights (Landscape Mode) */
+@media (max-height: 500px) {
+    #home {
+        padding-top: 100px;
+    }
+
+    header nav {
+        overflow-y: auto;
     }
 }
